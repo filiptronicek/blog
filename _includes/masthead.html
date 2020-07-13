@@ -3,14 +3,6 @@
 {% else %}
   {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
 {% endif %}
-<script>
-  if (location.hostname !== "localhost" || location.hostname !== "127.0.0.1") {
-    if (window.location.protocol == "http:") {
-        const restOfUrl = window.location.href.substr(5);
-        window.location.replace("https:" + restOfUrl)
-    }
-  }
-</script>
 
 <a href="https://trnck.dev">
 <img src="https://trnck.dev/assets/img/logo.png" class="circle mb-3 logo" style="max-width: 150px;">
