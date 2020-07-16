@@ -15,5 +15,8 @@ Now we open the README with read mode, and we search each line for the expressio
 
 I sometimes write two posts in 2 weeks, but sometimes also 2 posts in 4 months, so I didn't want to check every X for the post. The advantage I have here is, that I have all my posts on GitHub, which means, that I could make [this workflow](https://github.com/filiptronicek/filiptronicek.github.io/blob/master/.github/workflows/post.yml). It triggers a repository dispatch event on the README repo every time a there is a push event. The dispatch triggers [this action](https://github.com/filiptronicek/filiptronicek/blob/master/.github/workflows/update_blog.yml), which then runs the Python script.
 
+![screenshot of README section](https://raw.githubusercontent.com/filiptronicek/filiptronicek.github.io/master/img/Screenshot_2020-07-16%20filiptronicek%20filiptronicek.png)
 ## The latest tweet
 I basically stole the script (with proper attribution, of course) from [@zhiiiyang](https://github.com/zhiiiyang/), which is written in R, and uses the *tweetrmd* and *rtweet* libraries. It runs every 20 minutes, and checks for new tweets. If you have any suggestions, on how to make Twitter trigger the action by itself, feel free to tweet [@filiptronicek](https://twitter.com/filiptronicek).
+
+![screnshot of README tweet section](https://raw.githubusercontent.com/filiptronicek/filiptronicek.github.io/master/img/Screenshot_2020-07-16 filiptronicek filiptronicek(1))
