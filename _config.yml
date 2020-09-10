@@ -21,7 +21,7 @@ projects:
     forks: true
     projects: null
 social_media:
-  website: 'https://filiptronicek.github.io/'
+  website: 'https://filiptronicek.github.io/blog'
   twitter: filiptronicek
   stackoverflow: 10199319
   facebook: filiptronicek69
@@ -42,3 +42,4 @@ topics:
     image_url: >-
       https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png
 author: filiptronicek
+repository: "https://github.com/filiptronicek/blog"
