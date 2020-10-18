@@ -2,7 +2,7 @@
 title: 'Cloud storage v2.0: the what and the how'
 ---
 
-Clod storage: we all use it, but how do you get to the next level with it? 
+Cloud storage: we all use it, but how do you get to the next level with it? 
 What do I mean by the next level? I mean hosting stuff that you can get direct URLs to, make them pretty as well, and embed this media anywhere you want.
 
 ## The easy and simple way: online free file hosting services
