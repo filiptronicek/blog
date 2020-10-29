@@ -1,0 +1,4 @@
+tasks:
+    - name: Run Expo Server
+    - init: bash ./scripts/gitpod-init.sh
+      command: bundle exec jekyll serve
