@@ -1,4 +1,4 @@
 tasks:
     - name: Run Jekyll Dev Server
-    - init: bash ./scripts/gitpod-init.sh
-      command: bundle exec jekyll serve
+    - init: echo "Starting the server"
+      command: bundle install && bundle exec jekyll serve
