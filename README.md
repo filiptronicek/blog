@@ -18,15 +18,11 @@ Jekyll is a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) that can be ins
 ```
 gem install jekyll bundler
 ```
-3. Change into your new directory
-```
-cd personal-website
-```
-4. Install missing gems
+3. Install missing gems
 ```
 bundle install
 ```
-5. Build the site and make it available on a local server
+4. Build the site and make it available on a local server
 ```
 bundle exec jekyll serve
 ```
