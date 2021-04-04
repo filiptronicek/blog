@@ -18,6 +18,9 @@ With the introduction of Windows Subsystem for Linux version 2, you can do even 
 You can have a lot of them running at once, just like this:
 ![Desktop setup with multiple tabs](https://trnck.dev/0:/img/sahg20mu4nkkhlexnlqj.jpg)
 
+### Refferences 
+1. How to install WSL (2) on Windows 10 (Microsoft Docs): https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
 ## 3) Terminal Settings
 At the end of the previous chapter, you saw an image of my current setup of the Terminal. As you can see, you can have custom fonts, icons, and backgrounds. All of this can be achieved by editing the settings.json of the Terminal. You can get there by hitting `Ctrl + ,` or selecting "Settings" in the dropdown menu, you can directly edit the JSON powering your Terminal layout. If you want to see everything you can do here, take a look at the [Microsoft Docs](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-settings). The most important thing is, that you can set settings for both default shells and specific ones. Each shell has a GUID, which is a unique identifier of the shell. You can further specify a name, an icon, and whether to show it or not. This can result in something like this: 
 ```json
@@ -61,3 +64,7 @@ function choco { gsudo choco @args }
 ```
 ## My config
 My Terminal config is publicly accesible in a [GitHub Gist](https://gist.github.com/filiptronicek/92a68c8b21f0f317d6995fe2f7467524), feel free to edit or do anything else with it.
+
+## Further reading/watching
+1. Scott Hanselman's guide to WSL 2: https://www.youtube.com/watch?v=A0eqZujVfYU
+2. Scott Hanselman's Terminal customization tutorial: https://www.youtube.com/watch?v=oHhiMf_6exY
