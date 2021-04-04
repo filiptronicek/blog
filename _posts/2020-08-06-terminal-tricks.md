@@ -16,7 +16,7 @@ You can have Linux in the Terminal, too! Just download Ubuntu, Alpine, Debian, o
 With the introduction of Windows Subsystem for Linux version 2, you can do even more, because of the deeper integration of Linux into the Terminal. You can even have a GUI!
 
 You can have a lot of them running at once, just like this:
-![Desktop setup with multiple tabs](https://trnck.dev/0:/img/sahg20mu4nkkhlexnlqj.jpg)
+![Desktop setup with multiple tabs](/img/terminal.png)
 
 ### Refferences 
 1. How to install WSL (2) on Windows 10 (Microsoft Docs): https://docs.microsoft.com/en-us/windows/wsl/install-win10
