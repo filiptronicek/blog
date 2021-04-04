@@ -8,7 +8,7 @@ The Windows Terminal is the program, which all devs missed in Windows for years.
 PowerShell is the default shell in the Terminal, and there is now a multiplatform and open source version of it called PowerShell Core. It's not that much different from PowerShell, but it has such an awesome icon.
 ![PowerShell core icon](https://dev-to-uploads.s3.amazonaws.com/i/zxvi6tz9r3zsw04lklh9.png)
 
-Download it from [GitHub](https://github.com/PowerShell/PowerShell/releases/tag/latest) or just `choco install powershell-core`
+Download it from [GitHub](https://github.com/PowerShell/PowerShell/releases/latest) or just `choco install powershell-core`
 
 ## 2) WSL 2
 You can have Linux in the Terminal, too! Just download Ubuntu, Alpine, Debian, or Kali from the Microsoft Store (more distros are in the works).
