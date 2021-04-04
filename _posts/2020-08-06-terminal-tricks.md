@@ -62,9 +62,9 @@ For this specific example of Chocolatey, type `notepad $Profile` in the Powershe
 ```ps1
 function choco { gsudo choco @args }
 ```
-## My config
+## My config ⚙
 My Terminal config is publicly accesible in a [GitHub Gist](https://gist.github.com/filiptronicek/92a68c8b21f0f317d6995fe2f7467524), feel free to edit or do anything else with it.
 
-## Further reading/watching
+## Further reading/watching 
 1. Scott Hanselman's guide to WSL 2: https://www.youtube.com/watch?v=A0eqZujVfYU
 2. Scott Hanselman's Terminal customization tutorial: https://www.youtube.com/watch?v=oHhiMf_6exY
