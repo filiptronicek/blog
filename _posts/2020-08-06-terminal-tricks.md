@@ -56,7 +56,8 @@ You can use Escalated privileges mode using the Chocolatey package gsudo (`choco
 This can be used for example for using Chocolatey because it needs admin privileges to run properly.
 
 For this specific example of Chocolatey, type `notepad $Profile` in the Powershell and add the following line to it:
-`function choco { gsudo choco @args }`
-
+```ps1
+function choco { gsudo choco @args }
+```
 ## My config
 My Terminal config is publicly accesible in a [GitHub Gist](https://gist.github.com/filiptronicek/92a68c8b21f0f317d6995fe2f7467524), feel free to edit or do anything else with it.
