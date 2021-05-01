@@ -39,7 +39,7 @@ Keep in mind, I will be setting up Google Drive in this example, but other apps 
 ### Downloading and uploading
 An example use case (which I use) is backing up my stuff from my computer to Google Drive, that command would like like this:
 ```sh
-rclone copy --update --verbose --transfers 25 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/mnt/c/directory" remote:
+rclone copy --update --verbose --transfers 25 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress "/mnt/c/directory" remote:
 ```
 
 To download from the remote (for example to keep a copy of all your Google Photos or Onedrive documents locally), just switch out the remote and the source path
