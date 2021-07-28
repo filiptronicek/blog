@@ -1,6 +1,8 @@
 # Get started building your personal website
 [![Codeship Status for filiptronicek/filiptronicek.github.io](https://app.codeship.com/projects/4c810410-9f75-0138-4653-6678402409b7/status?branch=master)](https://app.codeship.com/projects/401750)
 
+![](https://user-images.githubusercontent.com/221550/110506678-51906280-80cd-11eb-803a-c41984bd9312.png)
+
 ## Installation
 
 ### Install in your local development environment
