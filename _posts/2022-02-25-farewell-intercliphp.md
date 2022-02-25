@@ -49,4 +49,8 @@ There are some limitations to the current approach, including:
 - Vercel's serverless functions are painfully slow, which means creating clips is not a pleasant experience
 - JavaScript is required for Interclip working properly
 
+
+<img width="873" alt="image" src="https://user-images.githubusercontent.com/29888641/155744177-bf9ec6aa-10ae-4327-abe2-642b01230952.png">
+
+
 You can try the new version out over at [beta.interclip.app](https://beta.interclip.app/). please do report any bugs you fine, I know there is a lot of them :).
