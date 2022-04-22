@@ -1,9 +1,16 @@
 name: Audit live site
-on: push
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types:
+      - completed
+
+jobs:
 
 jobs:
   audit:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Audit live URL
       uses: jakejarvis/lighthouse-action@master
