@@ -5,7 +5,7 @@ title: Getting a public IP, the hard way
 Sometimes, it could be because of multiple reasons, you just want to host your things at home, this could be:
 - A VPN for your devices so that you always have to access to your LAN wherever you are
 - A bigger Web App with a separate database and need for a lot of computing power
-- A game server (eg. Minecraft)
+- A game server (e.g. Minecraft)
 - File storage solution (FreeNAS, Plex, ..,)
 - Whatever else that exposes a port to the network
 
