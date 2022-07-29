@@ -1,4 +1,4 @@
-image: gitpod/workspace-ruby-3.1
+image: gitpod/workspace-ruby-2
 tasks:
     - name: Run Jekyll Dev Server
     - init: gem install bundler jekyll
