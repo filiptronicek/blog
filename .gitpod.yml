@@ -2,4 +2,4 @@ image: gitpod/workspace-ruby-2
 tasks:
     - name: Run Jekyll Dev Server
     - init: gem install bundler jekyll
-      command: bundle install && bundle exec jekyll serve
+      command: bundle install && bundle exec jekyll serve livereload
