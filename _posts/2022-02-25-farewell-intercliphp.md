@@ -9,10 +9,10 @@ As you may know, Interclip is a project I am very passionate about. More than [3
 The whole time Interclip has been a thing, it has been running on Apache servers with good ol' PHP. This allowed me to really understand how web servers and browsers work, but it led to a few engineering challenges from a technical POV:
 1. With an ever-growing codebase, it was really hard to manage components at such a low level, which also meant close to no IDE language smartness and frequent import errors.
 2. JavaScript imports are something very frustrating when dealing with it on a vanilla-JS level. You have to import all packages through CDNs and it's a pain in the ass to upgrade them.
-3. Something that I also learned by making desktop apps with Electron and mobile apps with React Native is that abstractions are awesome, if you choose the right ones. It is not a good idea to do input sanitization yourself, the same goes for authenthication.
+3. Something that I also learned by making desktop apps with Electron and mobile apps with React Native is that abstractions are awesome, if you choose the right ones. It is not a good idea to do input sanitization yourself, the same goes for authentication.
 4. The project is a pain to get setup (without Gitpod) and therefore hard to contribute to. This is not something I like at all, anyone should be able to just see a function in the codebase and be sure of what it does, why it is there and where it is used.
 5. JavaScript is not a very delightful language to use. TypeScript provides a much better experience and it is the standard for bigger projects.
-6. I wanted to integrate Tailwind.css, but just couldn't. Purging doesn't work for vanilla PHP projects, which would mean a multiple megabyte style sheet file, which is unnacceptable.
+6. I wanted to integrate Tailwind.css, but just couldn't. Purging doesn't work for vanilla PHP projects, which would mean a multiple megabyte style sheet file, which is unacceptable.
 
 This and many other factors have driven me to experiment with all kinds of frameworks, but the one I settled on was Next.js. I really like this framework, because has a large community and has so many cool features baked right in. This helped me overcome all of the challenges from the list above and much more.
 
