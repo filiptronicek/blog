@@ -1,5 +1,6 @@
 ---
 title: Backing up & backing down
+image: rclonebackup.jpg
 ---
 
 Hello, today's blog post is all about backing up stuff to the cloud and also having copies at home locally. Doing this is very important since it is crucial to keep your data alive even when something bad happens. To do all of this, we will be using [rclone](https://rclone.org/), which is an awesome open-source tool for doing stuff with cloud storage.

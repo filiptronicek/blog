@@ -1,5 +1,6 @@
 ---
 title: On a date with Interclip
+image: iclipdates.jpg
 ---
 
 Interclip has been getting a lot of updates recently, most prominently of all (and unbeknown to most) have been the changes on the server-side. I have upgraded the underlying architecture behind Interclip. I now have a much more powerful VM for faster operations and API calls. I have also moved the Database from an external webserver to a local one, nearly 10x its speed.

@@ -1,6 +1,7 @@
 ---
 title: GitHub Sponsors - donations can be inspirational
 layout: post
+image: donations.jpg
 ---
 
 Yesterday, on June 9th, 2020, I set up GitHub Sponsors. I didn't expect much of it, because I'm no grown adult, who has an actual work. I just started out doing open source, symbolically by contributing to [open-sauced/open-sauced](https://github.com/open-sauced/open-sauced). Although it wasn't my first open-source project (my own [Interclip](https://github.com/aperta-principium/Interclip), was), I hope it's going to be the most successful one.

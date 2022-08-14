@@ -1,5 +1,6 @@
 ---
 title: Perfecting the Windows Terminal
+image: windows-terminal.jpg
 ---
 
 The Windows Terminal is the program, which all devs missed in Windows for years. Now it's here and it's awesome! In this post, I'll share some tips for customizing it.

@@ -1,6 +1,7 @@
 ---
 title: Geo CZE (A geography project)
 layout: post
+image: geoproject.png
 ---
 
 In February, our teacher for geography assigned a project in which every student had to ask his relatives where they have been in the Czech Republic and put it into a table (and also draw a map). I found that a bit boring, so I thought of a better idea: a fully interactive map made into a web application. First I wanted to use the lazy approach to do the project: [MapFling](https://mapfling.com/). Unfortunately, the website was down on the day I wanted to start on. So I opened my browser and searched for some good maps APIs. I didn't want to use the Google Maps API, because it's too expensive just for a simple project. Then I found an API from [OpenLayers](https://openlayers.org/) which looked ok for the job. The only drawback with this solution is that the design is not as modern as e.g. [LeafletJS](https://leafletjs.com/).  So I got to work and on April 11, I published the code on [GitHub](https://github.com/filiptronicek/Geo_cze) 

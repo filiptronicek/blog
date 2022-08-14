@@ -1,5 +1,6 @@
 ---
 title: "Hacktoberfest 2020 is here \U0001F389"
+image: hacktoberfest2020.png
 ---
 
 Howdy, my developer friends. It's October, which means, that apart from [Techtober](https://mobilesyrup.com/2020/09/30/techtober-2020/) and [Oktoberfest](https://en.wikipedia.org/wiki/Oktoberfest) (which will sadly not take place this year), there is an event celebrating Open Source, called Hacktoberfest.
