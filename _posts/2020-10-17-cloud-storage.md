@@ -7,7 +7,7 @@ What do I mean by the next level? I mean hosting stuff that you can get direct U
 
 ## The easy and simple way: online free file hosting services
 Here are some services that will make you happy in a couple of seconds:
-### 1.1  Catbox.moe  (my personal favourite)
+### 1.1  Catbox.moe  (my personal favorite)
 Catbox is an awesome file hosting service, where you can store your up to 200MB files indefinitely (or use Litterbox to use it temporarily).
 
 It also provides a really neat API, which I use in my product [Interclip](https://blog.trnck.dev/what-is-interclip/)

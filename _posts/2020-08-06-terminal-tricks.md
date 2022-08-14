@@ -19,7 +19,7 @@ With the introduction of Windows Subsystem for Linux version 2, you can do even 
 You can have a lot of them running at once, just like this:
 ![Desktop setup with multiple tabs](/img/terminal.png)
 
-### Refferences 
+### References 
 1. How to install WSL (2) on Windows 10 (Microsoft Docs): https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 ## 3) Terminal Settings
@@ -64,7 +64,7 @@ For this specific example of Chocolatey, type `notepad $Profile` in the Powershe
 function choco { gsudo choco @args }
 ```
 ## My config ⚙
-My Terminal config is publicly accesible in a [GitHub Gist](https://gist.github.com/filiptronicek/92a68c8b21f0f317d6995fe2f7467524), feel free to edit or do anything else with it.
+My Terminal config is publicly accessible in a [GitHub Gist](https://gist.github.com/filiptronicek/92a68c8b21f0f317d6995fe2f7467524), feel free to edit or do anything else with it.
 
 ## Further reading/watching 📖
 1. Scott Hanselman's guide to WSL 2: https://www.youtube.com/watch?v=A0eqZujVfYU
