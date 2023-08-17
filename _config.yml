@@ -21,9 +21,7 @@ projects:
     forks: true
     projects: null
 social_media:
-  website: 'https://blog.trnck.dev'
-  twitter: filiptronicek
-  stackoverflow: 10199319
+  x: filiptronicek
   linkedin: filiptronicek
 topics:
   - name: JavaScript
