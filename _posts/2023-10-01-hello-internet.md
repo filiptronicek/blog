@@ -1,5 +1,5 @@
 ---
-title: "CipherTrail Chronicles Begins: Unveiling the Early Adopters of ECH and Kyber"
+title: "Unveiling the Early Adopters of ECH and Kyber"
 image: "ciphertrail-chronicles.jpg"
 ---
 
@@ -16,6 +16,12 @@ Next is up ECH, which is solving an issue of the present. As you may know, techn
 | Without ECH                            | With ECH                                 |
 | -------------------------------------- | ---------------------------------------- |
 | ![image](/img/ciphertrail/no_ech.webp) | ![image](/img/ciphertrail/with_ech.webp) |
+
+To summarize, ECH is a great feature for improving online privacy for many, the need to use a VPN (for personal use). It has great support among browsers, with both Chrome and Firefox leading the way[^4]. Client support is awesome to see, but in this case, we have an opposite problem to the one of Kyber PEMs: virtually no service accepts encrypted client hellos. I can only speculate about why I think that is: my opinions range from "c'mon, this was literally [released yesterday](https://blog.cloudflare.com/announcing-encrypted-client-hello/)" to the fact that this has big implications on security policies in enterprise and in places like schools, where some websites tend to be blocked. On the latter, the [Encrypted Client Hello Deployment Considerations](https://datatracker.ietf.org/doc/draft-campling-ech-deployment-considerations/) document explains these caveats in detail.
+
+Personally, I hold ECH for a massive improvement to the overall digital landscape and would encourage anyone on Cloudflare to [flip the switch](https://dash.cloudflare.com/?to=/:account/:zone/ssl-tls/edge-certificates). For other providers, I'd wait until ECH becomes easily available for you.
+
+I would love to make a blog post series out of this concept of web security, I named it "CipherTrail Chronicles" and hope I to see you on episode 2. To close of the post on something informative, here is an overview of some notable domains and their support status (as of September 2023)[^5]:
 
 | Domain             | Protocol | Key exchange          | ECH support | Cloudflare? |
 | ------------------ | -------- | --------------------- | ----------- | ----------- |
@@ -37,11 +43,13 @@ Next is up ECH, which is solving an issue of the present. As you may know, techn
 References:
 
 - [X25519Kyber768Draft00 hybrid post-quantum KEM for HPKE](https://www.ietf.org/archive/id/draft-westerbaan-cfrg-hpke-xyber768d00-00.html)
-- Top domain taken from Cloudflare's Radar on 09/30/2023: [Top 100 domains](https://radar.cloudflare.com/domains/)
+- Some of the domains taken from Cloudflare Radar's [Top 100 domains](https://radar.cloudflare.com/domains/) (on 09/30/2023) 
 - PQXDH: https://signal.org/docs/specifications/pqxdh/
 - [ECH protocol on Cloudflare's Docs](https://developers.cloudflare.com/ssl/edge-certificates/ech/)
 
 [^1]: Hybrid means that it is a combination of two algorithms. This implies double-encryption of all data, meaning that the key agreement can only be so weak as is its strongest component.
 [^2]: [It](https://eprint.iacr.org/2022/214.pdf) [really](https://eprint.iacr.org/2022/975) [does](https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/round-1/official-comments/guess-again-official-comment.pdf) [happen](https://arxiv.org/abs/1805.05429), [a](https://arstechnica.com/information-technology/2022/08/sike-once-a-post-quantum-encryption-contender-is-koed-in-nist-smackdown/) [lot](https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/KRh8w03PW4E).
 [^3]: Although only X25519Kyber768Draft00 is supported in Chrome
+[^4]: The only notable omission here is Safari and iOS / iPadOS in general.
+[^5]: Tested on Chrome 117.0.5938.62 with both ECH and Kyber flags enabled.
 
