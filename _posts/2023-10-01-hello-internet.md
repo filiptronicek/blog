@@ -13,8 +13,8 @@ This means that most sites proxied through Cloudflare already support Kyber512 a
 
 Next is up ECH, which is solving an issue of the present. As you may know, technologies like [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) help to keep snoopers away from your network traffic. The last piece of the puzzle is ClientHello, the packet responsible for negotiating a TLS session, which contains information including the <abbr title="Server Name Indication">SNI</abbr>, describing the hostname the client is requesting a certificate for. This meant that, for anyone listening for packets traveling over the network (be that your place of work, school or the ISP in case of your own home) they could see all of the domains you were visiting. With Encrypted Client Hello, the SNI is encrypted (the encrypted part is called _inner ClientHello_) and only the common name (SNI) is requested in plaintext (_outer ClientHello_).
 
-| Without ECH                           | With ECH                                |
-| ------------------------------------- | --------------------------------------- |
+| Without ECH                            | With ECH                                 |
+| -------------------------------------- | ---------------------------------------- |
 | ![image](/img/ciphertrail/no_ech.webp) | ![image](/img/ciphertrail/with_ech.webp) |
 
 | Domain             | Protocol | Key exchange          | ECH support | Note                                  |
@@ -44,3 +44,4 @@ References:
 [^1]: Hybrid means that it is a combination of two algorithms. This implies double-encryption of all data, meaning that the key agreement can only be so weak as is its strongest component.
 [^2]: [It](https://eprint.iacr.org/2022/214.pdf) [really](https://eprint.iacr.org/2022/975) [does](https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/round-1/official-comments/guess-again-official-comment.pdf) [happen](https://arxiv.org/abs/1805.05429), [a](https://arstechnica.com/information-technology/2022/08/sike-once-a-post-quantum-encryption-contender-is-koed-in-nist-smackdown/) [lot](https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/KRh8w03PW4E).
 [^3]: Although only X25519Kyber768Draft00 is supported in Chrome
+
