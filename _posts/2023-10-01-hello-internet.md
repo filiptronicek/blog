@@ -17,22 +17,22 @@ Next is up ECH, which is solving an issue of the present. As you may know, techn
 | -------------------------------------- | ---------------------------------------- |
 | ![image](/img/ciphertrail/no_ech.webp) | ![image](/img/ciphertrail/with_ech.webp) |
 
-| Domain             | Protocol | Key exchange          | ECH support | Note                                  |
-| ------------------ | -------- | --------------------- | ----------- | ------------------------------------- |
-| `tiktok.com`       | TLS 1.3  | X25519                | No          |                                       |
-| `twitter.com`      | TLS 1.3  | X25519                | No          |                                       |
-| `github.com`       | TLS 1.3  | X25519                | No          |                                       |
-| `npmjs.com`        | TLS 1.3  | X25519Kyber768Draft00 | No          | NPM is proxied through Cloudflare     |
-| `cloudflare.com`   | QUIC     | X25519Kyber768Draft00 | No          |                                       |
-| `apple.com`        | TLS 1.3  | X25519                | No          |                                       |
-| `netflix.com`      | TLS 1.3  | X25519                | No          |                                       |
-| `vercel.com`       | TLS 1.3  | X25519                | No          |                                       |
-| `google.com`       | QUIC     | X25519Kyber768Draft00 | No          |                                       |
-| `instagram.com`    | QUIC     | X25519                | No          |                                       |
-| `shopify.com`      | QUIC     | X25519Kyber768Draft00 | No          | Shopify is proxied through Cloudflare |
-| `drive.google.com` | QUIC     | X25519Kyber768Draft00 | No          |                                       |
-| `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          |                                       |
-| `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | Interclip is on Cloudflare            |
+| Domain             | Protocol | Key exchange          | ECH support | Cloudflare? |
+| ------------------ | -------- | --------------------- | ----------- | ----------- |
+| `tiktok.com`       | TLS 1.3  | X25519                | No          | ❌           |
+| `twitter.com`      | TLS 1.3  | X25519                | No          | ❌           |
+| `github.com`       | TLS 1.3  | X25519                | No          | ❌           |
+| `npmjs.com`        | TLS 1.3  | X25519Kyber768Draft00 | No          | ✅           |
+| `cloudflare.com`   | QUIC     | X25519Kyber768Draft00 | No          | ✅           |
+| `apple.com`        | TLS 1.3  | X25519                | No          | ❌           |
+| `netflix.com`      | TLS 1.3  | X25519                | No          | ❌           |
+| `vercel.com`       | TLS 1.3  | X25519                | No          | ❌           |
+| `google.com`       | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
+| `instagram.com`    | QUIC     | X25519                | No          | ❌           |
+| `shopify.com`      | QUIC     | X25519Kyber768Draft00 | No          | ✅           |
+| `drive.google.com` | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
+| `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
+| `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | ✅           |
 
 References:
 
