@@ -15,7 +15,7 @@ Next is up ECH, which is solving an issue of the present. As you may know, techn
 
 | Without ECH                           | With ECH                                |
 | ------------------------------------- | --------------------------------------- |
-| ![image](/img/ciphertrail/no_ech.png) | ![image](/img/ciphertrail/with_ech.png) |
+| ![image](/img/ciphertrail/no_ech.webp) | ![image](/img/ciphertrail/with_ech.webp) |
 
 | Domain             | Protocol | Key exchange          | ECH support | Note                                  |
 | ------------------ | -------- | --------------------- | ----------- | ------------------------------------- |
