@@ -1,6 +1,6 @@
 ---
 title: "Unveiling the Early Adopters of ECH and Kyber"
-image: “ciphertrails_1.png"
+image: ciphertrails_1.png
 ---
 
 As we're already accustomed to, the web becomes more secure every single day. This time around, we're discussing two emerging standards: Kyber-based hybrid post-quantum key exchange and <abbr title="Encrypted Client Hello">ECH</abbr>. Both are currently "Active Internet-Draft"s, yet they've already begun to roll out on major sites, at least one of them.
