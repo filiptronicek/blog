@@ -40,7 +40,7 @@ I would love to make a blog post series out of this concept of web security: I n
 | `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
 | `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | ✅           |
 
-Further reading:
+**Further reading**:
 - This blog is heavily based on the following writings from Cloudflare:
   - Kyber
     - [Defending against future threats: Cloudflare goes post-quantum](https://blog.cloudflare.com/post-quantum-for-all/)
@@ -51,7 +51,7 @@ Further reading:
     - [ECH on Cloudflare Docs](https://developers.cloudflare.com/ssl/edge-certificates/ech/)
     - [Encrypted Client Hello - the last puzzle piece to privacy](https://blog.cloudflare.com/announcing-encrypted-client-hello/)
 
-References:
+**References**:
 
 - [X25519Kyber768Draft00 hybrid post-quantum KEM for HPKE](https://www.ietf.org/archive/id/draft-westerbaan-cfrg-hpke-xyber768d00-00.html)
 - Some domains taken from Cloudflare Radar's [Top 100 domains](https://radar.cloudflare.com/domains/) (on 09/30/2023) 
