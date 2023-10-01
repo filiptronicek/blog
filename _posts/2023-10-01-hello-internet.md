@@ -1,5 +1,5 @@
 ---
-title: “Unveiling the Early Adopters of ECH and Kyber”
+title: "Unveiling the Early Adopters of ECH and Kyber"
 image: “ciphertrails_1.png"
 ---
 
