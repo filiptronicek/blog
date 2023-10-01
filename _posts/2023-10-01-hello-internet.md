@@ -40,12 +40,23 @@ I would love to make a blog post series out of this concept of web security: I n
 | `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
 | `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | ✅           |
 
+Further reading:
+- This blog is heavily based on the following writings from Cloudflare:
+  - Kyber
+    - [Defending against future threats: Cloudflare goes post-quantum](https://blog.cloudflare.com/post-quantum-for-all/)
+    - [Post-quantum cryptography goes GA](https://blog.cloudflare.com/post-quantum-cryptography-ga/)
+    - [NIST’s pleasant post-quantum surprise](https://blog.cloudflare.com/nist-post-quantum-surprise/)
+    - [The Quantum Menace](https://blog.cloudflare.com/the-quantum-menace/)
+  - ECH
+    - [ECH on Cloudflare Docs](https://developers.cloudflare.com/ssl/edge-certificates/ech/)
+    - [Encrypted Client Hello - the last puzzle piece to privacy](https://blog.cloudflare.com/announcing-encrypted-client-hello/)
+
 References:
 
 - [X25519Kyber768Draft00 hybrid post-quantum KEM for HPKE](https://www.ietf.org/archive/id/draft-westerbaan-cfrg-hpke-xyber768d00-00.html)
 - Some domains taken from Cloudflare Radar's [Top 100 domains](https://radar.cloudflare.com/domains/) (on 09/30/2023) 
-- PQXDH: https://signal.org/docs/specifications/pqxdh/
-- [ECH protocol on Cloudflare's Docs](https://developers.cloudflare.com/ssl/edge-certificates/ech/)
+- [PQXDH Spec](https://signal.org/docs/specifications/pqxdh/)
+- [Encrypted Client Hello on Wikipedia](https://en.wikipedia.org/wiki/Server_Name_Indication)
 
 [^1]: Hybrid means that it is a combination of two algorithms. This implies double encryption of all data, meaning that the key agreement can only be so weak as is its strongest component.
 [^2]: [It](https://eprint.iacr.org/2022/214.pdf) [really](https://eprint.iacr.org/2022/975) [does](https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/round-1/official-comments/guess-again-official-comment.pdf) [happen](https://arxiv.org/abs/1805.05429), [a](https://arstechnica.com/information-technology/2022/08/sike-once-a-post-quantum-encryption-contender-is-koed-in-nist-smackdown/) [lot](https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/KRh8w03PW4E).
