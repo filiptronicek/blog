@@ -1,6 +1,6 @@
 ---
 title: "Cloudflare disables Encrypted Client Hello"
-image: ciphertrails_1.png
+image: ciphertrails_2.png
 ---
 
 In late October, [Cloudflare informed](https://community.cloudflare.com/t/early-hints-and-encrypted-client-hello-ech-are-currently-disabled-globally/567730) via their forum that they were disabling <abbr title="Encrypted Client Hello">ECH</abbr> on all sites they manage, due to "issues"[^1]. This is quite sad and surprising news, as ECH was a great step forward for privacy on the web and Cloudflare is the first big player driving adoption of the standard.
