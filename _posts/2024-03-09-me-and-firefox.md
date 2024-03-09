@@ -11,9 +11,9 @@ At the time, I used to use Firefox Nightly as my default browser, so I opted for
 
 I switched to using Firefox again, and at the time of writing, I am still happy with it, even though it sometimes slightly misbehaves. I've been extremely excited about them shipping support for other standards, such as X25519Kyber768Draft00 and cool features like [tab previews](https://blog.nightly.mozilla.org/2024/02/06/a-preview-of-tab-previews-these-weeks-in-firefox-issue-153/). That being said, I feel like whenever I try to have my fun with some cool Web APIs, Firefox disappoints me. I always thought Safari would be the slowest to adopt these, but to my surprise, recently, quite the opposite has been happening. Some recent examples of things I dearly miss:
 
-- P3 color support (https://bugzilla.mozilla.org/show_bug.cgi?id=1686431)
-- HDR image and video support (https://bugzilla.mozilla.org/show_bug.cgi?id=hdr)
-- The vibrationActuator method for Gamepads (https://bugzilla.mozilla.org/show_bug.cgi?id=1824217)
+- P3 color support ([bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1686431))
+- HDR image and video support ([bug](https://bugzilla.mozilla.org/show_bug.cgi?id=hdr))
+- The vibrationActuator method for Gamepads ([bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1824217))
 - Proper navigator.clipboard.\* APIs support ([Browser Compat table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#browser_compatibility))
 
 At the end of the day, web developers can never really only use one browser. I will be trying out the latest and greatest features wherever they come out first. Cheers to the awesome work the team at Mozilla is doing! Let's see where this year takes us.
