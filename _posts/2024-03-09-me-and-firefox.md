@@ -1,6 +1,7 @@
 ---
 title: "Me and Firefox"
 layout: post
+image: me-and-firefox.png
 ---
 
 Firefox is a browser, I think we can all agree. I would go as far as to say that it's a _good_ browser. It's not perfect, but I found that it's as good as it gets when considering open-source browsers that "just work". Using a browser that is aligned with your moral and ethical stances comes at a cost, though.
