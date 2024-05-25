@@ -4,7 +4,6 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
   - jemoji
-  - jekyll-admin
   - jekyll-feed
 permalink: '/:title/'
 defaults:

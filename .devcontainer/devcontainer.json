@@ -1,0 +1,5 @@
+{
+	"name": "blog",
+	"image": "mcr.microsoft.com/devcontainers/ruby:latest",
+	"features": {}
+}
