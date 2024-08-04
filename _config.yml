@@ -12,28 +12,9 @@ defaults:
       type: posts
     values:
       layout: post
-projects:
-  sort_by: pushed
-  limit: 6
-  exclude:
-    archived: false
-    forks: true
-    projects: null
 social_media:
   x: filiptronicek
   linkedin: filiptronicek
-topics:
-  - name: JavaScript
-    web_url: 'https://github.com/topics/javascript'
-    image_url: >-
-      https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png
-  - name: Python
-    web_url: 'https://github.com/topics/python'
-    image_url: >-
-      https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png
-  - name: Node.js
-    web_url: 'https://github.com/topics/node-js'
-    image_url: >-
-      https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png
+title: Filip's Blog
 author: filiptronicek
 repository: "filiptronicek/blog"

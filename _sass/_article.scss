@@ -1,0 +1,50 @@
+:root {
+    color-scheme: light dark;
+}
+
+code {
+    margin-bottom: 1px;
+    padding: 2px 0.25em 1px;
+    border-radius: 0.2em;
+    line-height: 1.25em;
+    background-color: light-dark(rgba(8, 43, 120, 0.047), rgba(255, 255, 255, 0.075));
+    border: 0.5px solid light-dark(rgb(212, 212, 212), rgb(44, 46, 51));
+}
+
+p code {
+    font-size: 90%;
+    white-space: nowrap;
+}
+
+pre code {
+    display: block;
+    padding: 15px;
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+pre code::before {
+    content: " ";
+    display: block;
+    height: 1rem;
+}
+
+pre code::after {
+    content: " ";
+    display: block;
+    height: 1rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 90%;
+    color: light-dark(#333, #ddd);
+    background-color: light-dark(#f7f7f7, #444);
+    border: 1px solid light-dark(#ccc, #555);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 light-dark(#bbb, #666);
+    line-height: 1.4;
+}
