@@ -1,5 +1,12 @@
 {
 	"name": "blog",
 	"image": "mcr.microsoft.com/devcontainers/ruby:latest",
-	"features": {}
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
 }
