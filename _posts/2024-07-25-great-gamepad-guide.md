@@ -17,12 +17,12 @@ const gamepads = navigator.getGamepads();
 
 This will return an array of `Gamepad` objects, each representing a connected (and active) gamepad. To activate a gamepad and make it visible to the browser, you need to press a button or move an axis on the controller. This is a fingerpriting protection mechanism to prevent websites from passively tracking users. We'll get into this in more detail later.
 
-The state you get does not change, so you are responsible for re-querying the gamepads yourself. This is often done using the `requestAnimationFrame` API which is similar to `setTimeout`, but it gets called as soon as the browser is ready to paint the next frame, depending on the refresh rate of your display.
+The state you get does not change, so you are responsible for re-querying the gamepads yourself[^2]. This is often done using the `requestAnimationFrame` API which is similar to `setTimeout`, but it gets called as soon as the browser is ready to paint the next frame, depending on the refresh rate of your display.
 
-Another funny thing is that in Chrome the navigator.getgamepads() method always returns an array with 4 elements, each defaulting to `null` (in both Firefox and Safari you'll get an empty array when no gamepad is connected)[^2]. This means that you can't determine whether there is a connected gamepad depending on `gamepads.length`, but should instead do something like this:
+Another funny thing is that in Chrome the navigator.getgamepads() method always returns an array with 4 elements, each defaulting to `null` (in both Firefox and Safari you'll get an empty array when no gamepad is connected)[^3]. This means that you can't determine whether there is a connected gamepad depending on `gamepads.length`, but should instead do something like this:
 
 ```javascript
-const isGamepadConnected = navigator.getGamepads().filter(g => g).length > 0;
+const isGamepadConnected = navigator.getGamepads().filter((g) => g).length > 0;
 ```
 
 The API also offers two very useful events: `gamepadconnected` and `gamepaddisconnected`. We can use these two to prevent excessive polling for gamepads when there are none connected.
@@ -39,14 +39,12 @@ Axes are a tiny bit more complicated: because the standard 2 analog sticks on a 
 
 ```javascript
 [
-    0.019607901573181152,
-    0.011764764785766602,
-    -0.7254902124404907,
-    0.48235297203063965
-]
+  0.019607901573181152, 0.011764764785766602, -0.7254902124404907,
+  0.48235297203063965,
+];
 ```
 
-it would mean the right one is moved to the left and down (axis indexes 2 and 3, respectively), while the left stick is not moved at all (not that there needs to be some tolerance for this, as the sticks are never perfectly centered [^3]).
+it would mean the right one is moved to the left and down (axis indexes 2 and 3, respectively), while the left stick is not moved at all (not that there needs to be some tolerance for this, as the sticks are never perfectly centered [^4]).
 
 ### Putting it together
 
@@ -54,29 +52,29 @@ OK, now, let's put what we learned together we can make simple game controls for
 
 ```javascript
 const gameloop = () => {
-    const gamepads = navigator.getGamepads();
-    const gamepad = gamepads[0];
-    if (!gamepad) {
-        return;
-    }
+  const gamepads = navigator.getGamepads();
+  const gamepad = gamepads[0];
+  if (!gamepad) {
+    return;
+  }
 
-    // check if the primary button is pressed (A on Xbox controllers and X on PlayStation controllers)
-    if (gamepad.buttons[0].pressed) {
-        jump();
-    }
+  // check if the primary button is pressed (A on Xbox controllers and X on PlayStation controllers)
+  if (gamepad.buttons[0].pressed) {
+    jump();
+  }
 
-    if (gamepad.axes[0] > 0.1) {
-        moveRight();
-    } else if (gamepad.axes[0] < -0.1) {
-        moveLeft();
-    }
+  if (gamepad.axes[0] > 0.1) {
+    moveRight();
+  } else if (gamepad.axes[0] < -0.1) {
+    moveLeft();
+  }
 
-    requestAnimationFrame(gameloop);
-}
+  requestAnimationFrame(gameloop);
+};
 
-window.addEventListener('gamepadconnected', (e) => {
-    console.log('Gamepad connected!');
-    requestAnimationFrame(gameloop);
+window.addEventListener("gamepadconnected", (e) => {
+  console.log("Gamepad connected!");
+  requestAnimationFrame(gameloop);
 });
 ```
 
@@ -88,7 +86,7 @@ To date, Chromium has built-in mappings for 55 controllers [[source](https://git
 
 ### Sony DualSense
 
-The controller released alongside the PlayStation 5 in 2020 is a great example of a controller with many inconsistencies. Its biggest part, the touch pad in the middle of the controller is only considered a button in Chrome, while the "mute mic" button is not mapped to anything anywhere [^4]. We can hope to get more use of the trackpad with the [proposed `GamepadTouch`](https://knyg.github.io/gamepad/extensions.html#gamepadtouch-interface) extension to the API, but for now, it's just a mostly-unsupported button.
+The controller released alongside the PlayStation 5 in 2020 is a great example of a controller with many inconsistencies. Its biggest part, the touch pad in the middle of the controller is only considered a button in Chrome, while the "mute mic" button is not mapped to anything anywhere [^5]. We can hope to get more use of the trackpad with the [proposed `GamepadTouch`](https://knyg.github.io/gamepad/extensions.html#gamepadtouch-interface) extension to the API, but for now, it's just a mostly-unsupported button.
 
 Here is a diagram of the button mappings across different browsers:
 
@@ -106,9 +104,34 @@ The Xbox Wireless Controller is a great example of a controller with mappings in
 
 The only notable difference is that the Share button is only mapped in Chrome (with the other browsers keeping just 17 buttons for consistency). There is an [ongoing discussion](https://github.com/w3c/gamepad/issues/191#issuecomment-1874772314) about introducing an 18th button to the Standard Gamepad mapping to accommodate this button and the DualSense's touchpad.
 
-Mappings: https://w3c.github.io/gamepad/#remapping
+## What's next
+
+When looking into the future of the Gamepad API, there are a few things currently either pending implementation or still pending standardization:
+
+### Touch events
+
+Touch events have been a part of the Gamepad API extensions for quite a while now, but since April there has been an [active effort](https://github.com/w3c/gamepad/pull/198) to merge the minto the main spec. This would let browser communicate events using built-in touch pads on controllers like the DualSense and the Steam Controller and enable more complex interactions such as scrolling.
+
+Chrome actually implemented this extension [last year](https://chromestatus.com/feature/4782975812108288), but I am yet to see the API work with any controller.
+
+### Gamepad pose
+
+Another proposal (currently part of the Gamepad Extensions) is called GamepadPose. This interface on the `Gamepad` object would enable tracking things like the acceleration, orientation and position of the controller in 3D space. This would allow for gestures like detecting shaking or supporting use-cases akin to Wii Sports. Lovely!
+
+It's just a shame that the Xbox controller, which offers the best-in-class browser support and is what many people think of when mentioning a "game controller" does not offer any support for determining acceleration or the position in 3D space, in addition to the lack of a touch pad or even build-in batteries.
+
+### An 18th button
+
+The official specification also has an active issue attempting to introduce a button at index 17, defined as the "fourth button in center cluster". This would mean that Chrome's non-standard support for DualSense's trackpad, Xbox's Share and the Switch's Capture buttons would be considered compliant according to the Standard Gamepad mapping.
+
+<figure>
+ <img src="/img/gamepads/standard_gamepad.svg">
+  <figcaption>The current <a href="https://w3c.github.io/gamepad/#remapping">Standard</a> gamepad mapping</figcaption>
+</figure>
 
 [^1]: Visit chrome://dino/
-[^2]: This is unsurprisingly against the spec, which states that _to mitigate fingerprinting, getGamepads() returns an empty list before a gamepad user gesture has been seen._
-[^3]: This is even worse with things like the Nintento Joy-Cons, which have a habit of [drifting](https://www.theverge.com/21504741/nintendo-switch-joy-con-drift-problem-explained).
-[^4]: Besides Firefox when you connect the controller via cable. In that case, it's mapped to button 14.
+[^2]: In the past, Firefox actually implemented `gamepadbuttondown` and `gamepadbuttonup` events, but those are non-standard and shouldn't be used.
+[^3]: This is unsurprisingly against the spec, which states that _to mitigate fingerprinting, getGamepads() returns an empty list before a gamepad user gesture has been seen._
+[^4]: This is even worse with things like the Nintento Joy-Cons, which have a habit of [drifting](https://www.theverge.com/21504741/nintendo-switch-joy-con-drift-problem-explained).
+[^5]: Besides Firefox when you connect the controller via cable. In that case, it's mapped to button 14.
+
