@@ -102,7 +102,7 @@ The Xbox Wireless Controller is a great example of a controller with mappings in
 
 ![](/img/gamepads/xbox.png)
 
-The only notable difference is that the Share button is only mapped in Chrome (with the other browsers keeping just 17 buttons for consistency). There is an [ongoing discussion](https://github.com/w3c/gamepad/issues/191#issuecomment-1874772314) about introducing an 18th button to the Standard Gamepad mapping to accommodate this button and the DualSense's touchpad.
+The only notable difference is that the Share button is only mapped in Chrome (with the other browsers keeping just 17 buttons for consistency).
 
 ## What's next
 
@@ -111,6 +111,8 @@ When looking into the future of the Gamepad API, there are a few things currentl
 ### Touch events
 
 Touch events have been a part of the Gamepad API extensions for quite a while now, but since April there has been an [active effort](https://github.com/w3c/gamepad/pull/198) to merge the minto the main spec. This would let browser communicate events using built-in touch pads on controllers like the DualSense and the Steam Controller and enable more complex interactions such as scrolling.
+
+Touch events are also a very interesting topic when considering controllers for <abbr title="Extended Reality">XR</abbr>, which heavily feature trackpads on them, even to the extent that the `xr-standard` controller mapping includes it (and currently works around the platform limitation by surfacing it as an axis).
 
 Chrome actually implemented this extension [last year](https://chromestatus.com/feature/4782975812108288), but I am yet to see the API work with any controller.
 
