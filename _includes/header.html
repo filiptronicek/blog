@@ -17,7 +17,7 @@
     {% assign meta_image = page.image | prepend: "/img/thumbnail/" | absolute_url %}
   {% endif %}
 {% else %}
-  {% assign page_title = user.name %}
+  {% assign page_title = site.title %}
   {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
   {% assign meta_image = user.avatar_url %}
 {% endif %}

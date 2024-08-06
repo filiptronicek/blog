@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem "github-pages", "~> 231", group: :jekyll_plugins
+group :jekyll_plugins do
+  gem 'jekyll_picture_tag', '~> 2.0'
+end
 gem "jekyll-github-metadata"
 gem "jekyll-octicons"
 gem "jemoji"
