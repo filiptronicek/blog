@@ -1,0 +1,62 @@
+name: Publish to GitHub Pages
+
+# Run when new code is pushed to `main`. Also provide a button for manual deploys.
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: github_pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Jekyll Picture Tag requires libvips libraries for resizing images, which must be installed
+      - name: Install JPT's dependencies
+        run: sudo apt-get install libvips-tools libpng-dev libwebp-dev libjpeg-dev libheif-dev
+
+      # Put repository source onto the runner so we can build it
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Install the proper version of Ruby and run bundle install
+      - name: 💎 Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          cache-version: 2
+          ruby-version: "3.3"
+
+      # Build the site
+      - name: 🧪 Jekyll build
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - name: ⏫ Upload artifact to GitHub Pages
+        id: artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _site/
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
