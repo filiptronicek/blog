@@ -15,6 +15,11 @@ defaults:
 social_media:
   x: filiptronicek
   linkedin: filiptronicek
+user:
+  name: "Filip Troníček"
+  login: filiptronicek
 title: Filip's Blog
 author: filiptronicek
 repository: "filiptronicek/blog"
+picture:
+  suppress_warnings: true

@@ -52,6 +52,7 @@
 }
 
 .article {
+
   h1,
   h2,
   h3,
@@ -78,15 +79,32 @@
     padding-left: 16px;
     margin-bottom: 0px;
   }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    img {
+      max-width: 80%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    img {
+      max-width: 60%;
+    }
+  }
 }
 
 .min-height-full {
   min-height: 100vh;
 }
-img {
-  max-width: 60%;
-}
-h1.text-white > a:nth-child(1) {
+
+h1.text-white>a:nth-child(1) {
   text-decoration: none;
   color: white !important;
 }
@@ -108,7 +126,9 @@ table {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 600px) {
+
   table,
   thead,
   tbody,
@@ -117,20 +137,24 @@ table {
   tr {
     display: block;
   }
+
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
+
   tr {
     margin-bottom: 0.5rem;
   }
+
   td {
     border: none;
     border-bottom: 1px solid #ddd;
     position: relative;
     padding-left: 50%;
   }
+
   td:before {
     position: absolute;
     top: 6px;
@@ -146,83 +170,105 @@ table {
   table {
     border-color: #444;
   }
+
   th,
   td {
     border-color: #444;
   }
+
   th {
     background-color: #333;
   }
+
   tr:nth-child(even) {
     background-color: #222;
   }
+
   tr:hover {
     background-color: #444;
   }
+
   h1,
   h2,
   h3,
   h4 {
     color: #e4e4e4 !important;
   }
+
   body {
     background-color: #444 !important;
     color: #e4e4e4 !important;
   }
+
   a {
     color: #e39777 !important;
   }
+
   img {
     filter: grayscale(30%) !important;
   }
+
   .bg-gray-light {
     background-color: rgb(48, 48, 48) !important;
   }
+
   .text-gray,
   .text-gray-dark,
   .text-gray-light {
     color: #cac7c7 !important;
   }
+
   .border {
     border: none !important;
   }
+
   .bg-white {
     background: rgb(45, 45, 45) !important;
   }
+
   .octicon {
     filter: invert(1);
   }
+
   .link-gray-dark,
   .contrib-number {
     color: #e4e4e4 !important;
   }
+
   .border-md-right,
   .border-md-bottom {
     border: none !important;
   }
 }
+
 .twitter-timeline {
   margin-top: 150px;
 }
+
 html {
   content: "";
 }
+
 @media (prefers-color-scheme: light) {
   html {
     content: "light";
   }
+
   th {
     background-color: #f2f2f2;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   html {
     content: "dark";
   }
 }
+
 .lh-condensed a:hover {
   text-decoration: none;
 }
+
 .logo:hover {
   filter: brightness(var(--hover-brightness));
 }

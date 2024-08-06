@@ -1,0 +1,12 @@
+presets:
+  default:
+    markup: picture
+    formats: [avif, original]
+    widths: [600, 800, 1200, 1800]
+    link_source: true
+    quality: 75
+    format_quality:
+      avif: 75
+    strip_metadata: true
+    keep: attention
+    dimension_attributes: true
