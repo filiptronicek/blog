@@ -90,7 +90,7 @@ The controller released alongside the PlayStation 5 in 2020 is a great example o
 
 Here is a diagram of the button mappings across different browsers:
 
-![](/img/gamepads/dualsense.png)
+{% picture /img/gamepads/dualsense.png %}
 
 Note that because Firefox does not have a mapping for the controller (`gamepad.mapping === ""`), the button order is shuffled around and the D-Pad is not mapped at all to buttons, but to axes instead. There is also no support for partial button presses on the R2 and L2 triggers. Additionally, it's worth noting that for the controller, only Safari on macOS can vibrate the controller using the `vibrationActuator` API [[source](https://github.com/mdn/browser-compat-data/issues/12180#issuecomment-2211653079)].
 
@@ -100,7 +100,7 @@ If you are serious about supporting DualSense on the web, consider using the awe
 
 The Xbox Wireless Controller is a great example of a controller with mappings in all major browser (most likely because it's remained mostly consistent since the Xbox One release in 2013). Here's the same diagram as above, but for the Xbox:
 
-![](/img/gamepads/xbox.png)
+{% picture /img/gamepads/xbox.png %}
 
 The only notable difference is that the Share button is only mapped in Chrome (with the other browsers keeping just 17 buttons for consistency).
 
@@ -132,7 +132,7 @@ The official specification also has an active issue attempting to introduce a bu
 </figure>
 
 [^1]: Visit chrome://dino/
-[^2]: In the past, Firefox actually implemented `gamepadbuttondown` and `gamepadbuttonup` events, but those are non-standard and shouldn't be used.
+[^2]: In the past, Firefox actually implemented `gamepadbuttondown` and `gamepadbuttonup` events, but those are non-standard and shouldn't be used. A big reason why that is is that you just cannot control the amount of events that are to be dispatched, which can potentially lead to performance issues with the main thread being blocked for long periods of time when quickly triggering events such as by quickly moving the gamepad axes.
 [^3]: This is unsurprisingly against the spec, which states that _to mitigate fingerprinting, getGamepads() returns an empty list before a gamepad user gesture has been seen._
 [^4]: This is even worse with things like the Nintento Joy-Cons, which have a habit of [drifting](https://www.theverge.com/21504741/nintendo-switch-joy-con-drift-problem-explained).
 [^5]: Besides Firefox when you connect the controller via cable. In that case, it's mapped to button 14.
