@@ -2,7 +2,6 @@ layout: sidebar
 style: light
 plugins:
   - jekyll-octicons
-  - jekyll-github-metadata
   - jemoji
   - jekyll-feed
 permalink: '/:title/'
