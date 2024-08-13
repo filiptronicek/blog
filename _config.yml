@@ -14,6 +14,7 @@ defaults:
 social_media:
   x: filiptronicek
   linkedin: filiptronicek
+  rss: feed.xml
 user:
   name: "Filip Troníček"
   login: filiptronicek
