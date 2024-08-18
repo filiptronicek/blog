@@ -13,9 +13,9 @@ This means that most sites proxied through Cloudflare already support Kyber512 a
 
 Next is up ECH, which is solving an issue of the present. As you may know, technologies like [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) help to keep snoopers away from your network traffic. The last piece of the puzzle is ClientHello, the packet responsible for negotiating a TLS session, which contains information including the <abbr title="Server Name Indication">SNI</abbr>, describing the hostname the client is requesting a certificate for. This meant that, for anyone listening for packets traveling over the network (be that your place of work, school, or the ISP in case of your own home) they could see all the domains you were visiting. With Encrypted Client Hello, the SNI is encrypted (the encrypted part is called _inner ClientHello_) and only the common name (SNI) is requested in plaintext (_outer ClientHello_).
 
-| Without ECH                            | With ECH                                 |
-| -------------------------------------- | ---------------------------------------- |
-| ![image](/img/ciphertrail/no_ech.webp) | ![image](/img/ciphertrail/with_ech.webp) |
+| Without ECH                                | With ECH                                              |
+| ------------------------------------------ | ----------------------------------------------------- |
+| !{% picture /img/ciphertrail/no_ech.webp } | {% picture ![image](/img/ciphertrail/with_ech.webp) } |
 
 To summarize, ECH is a great feature for improving online privacy for many, the need to use a VPN (for personal use). It has great support among browsers, with both Chrome and Firefox leading the way[^4]. Client support is awesome to see, but in this case, we have an opposite problem to the one of Kyber PEMs: virtually no service accepts encrypted client hellos. I can only speculate about why I think that is: my opinions range from “c'mon, this was literally [released yesterday](https://blog.cloudflare.com/announcing-encrypted-client-hello/)” to the fact that this has big implications on security policies in enterprise and in places like schools, where some websites tend to be blocked. On the latter, the [Encrypted Client Hello Deployment Considerations](https://datatracker.ietf.org/doc/draft-campling-ech-deployment-considerations/) document explains these caveats in detail.
 
@@ -25,22 +25,23 @@ I would love to make a blog post series out of this concept of web security: I n
 
 | Domain             | Protocol | Key exchange          | ECH support | Cloudflare? |
 | ------------------ | -------- | --------------------- | ----------- | ----------- |
-| `tiktok.com`       | TLS 1.3  | X25519                | No          | ❌           |
-| `twitter.com`      | TLS 1.3  | X25519                | No          | ❌           |
-| `github.com`       | TLS 1.3  | X25519                | No          | ❌           |
-| `npmjs.com`        | TLS 1.3  | X25519Kyber768Draft00 | No          | ✅           |
-| `cloudflare.com`   | QUIC     | X25519Kyber768Draft00 | No          | ✅           |
-| `apple.com`        | TLS 1.3  | X25519                | No          | ❌           |
-| `netflix.com`      | TLS 1.3  | X25519                | No          | ❌           |
-| `vercel.com`       | TLS 1.3  | X25519                | No          | ❌           |
-| `google.com`       | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
-| `instagram.com`    | QUIC     | X25519                | No          | ❌           |
-| `shopify.com`      | QUIC     | X25519Kyber768Draft00 | No          | ✅           |
-| `drive.google.com` | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
-| `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          | ❌           |
-| `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | ✅           |
+| `tiktok.com`       | TLS 1.3  | X25519                | No          | ❌          |
+| `twitter.com`      | TLS 1.3  | X25519                | No          | ❌          |
+| `github.com`       | TLS 1.3  | X25519                | No          | ❌          |
+| `npmjs.com`        | TLS 1.3  | X25519Kyber768Draft00 | No          | ✅          |
+| `cloudflare.com`   | QUIC     | X25519Kyber768Draft00 | No          | ✅          |
+| `apple.com`        | TLS 1.3  | X25519                | No          | ❌          |
+| `netflix.com`      | TLS 1.3  | X25519                | No          | ❌          |
+| `vercel.com`       | TLS 1.3  | X25519                | No          | ❌          |
+| `google.com`       | QUIC     | X25519Kyber768Draft00 | No          | ❌          |
+| `instagram.com`    | QUIC     | X25519                | No          | ❌          |
+| `shopify.com`      | QUIC     | X25519Kyber768Draft00 | No          | ✅          |
+| `drive.google.com` | QUIC     | X25519Kyber768Draft00 | No          | ❌          |
+| `youtube.com`      | QUIC     | X25519Kyber768Draft00 | No          | ❌          |
+| `interclip.app`    | QUIC     | X25519Kyber768Draft00 | Yes         | ✅          |
 
 **Further reading**:
+
 - This blog is heavily based on the following writings from Cloudflare:
   - Kyber
     - [Defending against future threats: Cloudflare goes post-quantum](https://blog.cloudflare.com/post-quantum-for-all/)
@@ -54,7 +55,7 @@ I would love to make a blog post series out of this concept of web security: I n
 **References**:
 
 - [X25519Kyber768Draft00 hybrid post-quantum KEM for HPKE](https://www.ietf.org/archive/id/draft-westerbaan-cfrg-hpke-xyber768d00-00.html)
-- Some domains taken from Cloudflare Radar's [Top 100 domains](https://radar.cloudflare.com/domains/) (on 09/30/2023) 
+- Some domains taken from Cloudflare Radar's [Top 100 domains](https://radar.cloudflare.com/domains/) (on 09/30/2023)
 - [PQXDH Spec](https://signal.org/docs/specifications/pqxdh/)
 - [Encrypted Client Hello on Wikipedia](https://en.wikipedia.org/wiki/Server_Name_Indication)
 
