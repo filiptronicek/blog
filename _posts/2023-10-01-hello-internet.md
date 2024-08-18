@@ -13,9 +13,9 @@ This means that most sites proxied through Cloudflare already support Kyber512 a
 
 Next is up ECH, which is solving an issue of the present. As you may know, technologies like [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) help to keep snoopers away from your network traffic. The last piece of the puzzle is ClientHello, the packet responsible for negotiating a TLS session, which contains information including the <abbr title="Server Name Indication">SNI</abbr>, describing the hostname the client is requesting a certificate for. This meant that, for anyone listening for packets traveling over the network (be that your place of work, school, or the ISP in case of your own home) they could see all the domains you were visiting. With Encrypted Client Hello, the SNI is encrypted (the encrypted part is called _inner ClientHello_) and only the common name (SNI) is requested in plaintext (_outer ClientHello_).
 
-| Without ECH                                | With ECH                                              |
-| ------------------------------------------ | ----------------------------------------------------- |
-| !{% picture /img/ciphertrail/no_ech.webp } | {% picture ![image](/img/ciphertrail/with_ech.webp) } |
+| Without ECH                                 | With ECH                                               |
+| ------------------------------------------- | ------------------------------------------------------ |
+| !{% picture /img/ciphertrail/no_ech.webp %} | {% picture ![image](/img/ciphertrail/with_ech.webp) %} |
 
 To summarize, ECH is a great feature for improving online privacy for many, the need to use a VPN (for personal use). It has great support among browsers, with both Chrome and Firefox leading the way[^4]. Client support is awesome to see, but in this case, we have an opposite problem to the one of Kyber PEMs: virtually no service accepts encrypted client hellos. I can only speculate about why I think that is: my opinions range from “c'mon, this was literally [released yesterday](https://blog.cloudflare.com/announcing-encrypted-client-hello/)” to the fact that this has big implications on security policies in enterprise and in places like schools, where some websites tend to be blocked. On the latter, the [Encrypted Client Hello Deployment Considerations](https://datatracker.ietf.org/doc/draft-campling-ech-deployment-considerations/) document explains these caveats in detail.
 
