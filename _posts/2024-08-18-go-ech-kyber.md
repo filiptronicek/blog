@@ -51,7 +51,7 @@ Alright, let's just run this and...
 undefined: echConfigListBytes
 ```
 
-Damn it, we need some `EncryptedClientHelloConfigList` to let the client know about the public key with which to encrypt the SNI. But how do we get that? Well, if you by chance stumbled upon [RFC 9460](https://datatracker.ietf.org/doc/rfc9460/) section 14.3.2 you could read that the DNS record 65 (HTTPS) has a field called `ech`, which contains just that: the key to give to `EncryptedClientHelloConfigList` - yay! This means that to make a proper ECH-enabled HTTP request, we need to first query DNS, parse the response, and then use the key to give to `http.Client.Do`.
+Damn it, we need some `EncryptedClientHelloConfigList` to let the client know about the public key with which to encrypt the <abbr title="Server Name Indication">SNI</abbr>. But how do we get that? Well, if you by chance stumbled upon [RFC 9460](https://datatracker.ietf.org/doc/rfc9460/) section 14.3.2 you could read that the DNS record type 65 (HTTPS) has a field called `ech`, which contains just that: the key to give to `EncryptedClientHelloConfigList` - yay! This means that to make a proper ECH-enabled HTTP request, we need to first query DNS, parse the response, and then use the key to give to `http.Client.Do`.
 
 Knowing this, we can now write a more complete example:
 
