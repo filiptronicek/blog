@@ -182,3 +182,5 @@ As you can see from the example above, the kyber curve is not exported from `cry
 That's good and all, but the only thing this gives us is the binary ability to see whether the server accepts the kyber curve or not — the request will simply fail with `remote error: tls: illegal parameter`. It would be super great if there was an actual way to determine the negotiated key exchange group, but unfortunately that's behind an internal `tls.ConnectionState.testingOnlyCurveID`. For now, the best way to get this information is still to use Cloudflare's Go fork.
 
 Alright, coool, awesome, bingo, huzzah, this is all very exciting. I guess, if you take anything from this post, let it be that Go 1.23 is worth upgrading to (and not just because the version string is ordered in ascending order). In fact, it's [already enabled](https://github.com/gitpod-io/workspace-images/pull/1403) by default in any new Gitpod workspace based on gitpod-provided workspace images.
+
+Thumnail is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) Renée French. I am very sorry for what I've done to the little gopher.
