@@ -8,7 +8,7 @@ Hey all! Some time has passed already and I felt like giving you all an update a
 ## Post-quantum adoption
 
 - today, close to 50% of human internet traffic that routes through Cloudflare is using ML-KEM or X25519Kyber768 (for HTTP3 traffic, this jumps to about 65%!) [^1]
-- since last time, both Chrome and Firefox made the switch to the [now standardized ML-KEM](https://csrc.nist.gov/pubs/fips/203/final). If you're not into threat actors harvesting your pre-quantum Safari traffic, upgrade your software to `(mac|i|iPad|tv|watch/vision)OS` 26.
+- since last time, both Chrome and Firefox made the switch to the [now standardized ML-KEM](https://csrc.nist.gov/pubs/fips/203/final). If you're not into threat actors harvesting your pre-quantum Safari traffic, upgrade your software to `(mac|i|iPad|tv|watch|vision)OS` 26.
 - OpenSSL 3.5.0 [shipped](https://github.com/openssl/openssl/releases/tag/openssl-3.5.0) with native support for ML-KEM
 - from a dataset of 10 000 most popular domains according to Cloudflare Radar, about 52% of them connect using ML-KEM
 
