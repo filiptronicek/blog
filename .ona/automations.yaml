@@ -1,0 +1,13 @@
+services:
+    blog:
+        name: Blog Server
+        description: Serves the Jekyll blog
+        commands:
+            start: |
+                bundle install
+                bundle exec jekyll serve --host 0.0.0.0 --port 4000
+            ready: |
+                curl -s http://localhost:4000 > /dev/null && echo "Blog is ready" || exit 1
+        triggeredBy:
+            - postEnvironmentStart
+
