@@ -10,7 +10,7 @@ As part of [4IZ110](https://4iz110.vse.cz/) at my bachelor's programme at the Pr
 
 I chose to focus mainly on the encryption and data formats behind these protocols, as I thought the three would make an interesting comparison. Learning about how Signal does key derivation and how it can guarantee both forward secrecy and post-compromise security, my mind was truly boggled (in other words, I learned a lot).
 
-You can find the thesis as PDF [in Czech] [here](/static/Instant%20Messaging.pdf).
+You can find the paper as PDF [in Czech] [here](/static/Instant%20Messaging.pdf).
 
 The scope of the paper sadly limited the space to dive too deep into all of the protocols, but I was at least glad I was able to connect instant messaging with my love for <abbr title="Post-Quantum">PQ</abbr> cryptography – not only was I able to talk about <abbr title="Post-Quantum Extended Diffie-Hellman">PQXDH</abbr>, the quantum-resistant key agreement protocol we briefly touched on [more than 2 years back](/hello-internet/), but as it turns out, there is a new way the brilliant engineers behind the Signal messenger created to make messaging even more complex.
 
