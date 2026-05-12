@@ -12,6 +12,7 @@ defaults:
     values:
       layout: post
 social_media:
+  bluesky: trnck.dev
   x: filiptronicek
   linkedin: filiptronicek
   rss: feed.xml
