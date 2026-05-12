@@ -4,6 +4,8 @@ services:
         description: Serves the Jekyll blog
         commands:
             start: |
+                eval "$(rbenv init - bash)"
+                rbenv install -s "$(cat .ruby-version | sed 's/^ruby-//')"
                 bundle install
                 bundle exec jekyll serve --host 0.0.0.0 --port 4000
             ready: |
