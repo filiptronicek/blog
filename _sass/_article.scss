@@ -11,6 +11,42 @@ p code {
     border: 0.5px solid light-dark(rgb(212, 212, 212), rgb(44, 46, 51));
 }
 
+.article {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        scroll-margin-top: 1rem;
+    }
+
+    // Headings stay visually plain even though they are links: inherit the
+    // heading colour (beating the global dark-mode `a` colour) and never
+    // underline.
+    .heading-anchor,
+    .heading-anchor:hover,
+    .heading-anchor:visited {
+        color: inherit !important;
+        text-decoration: none;
+    }
+
+    .heading-anchor-icon {
+        margin-left: 0.35em;
+        color: inherit;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
+        vertical-align: middle;
+        // Opt out of the global dark-mode octicon inversion so the icon
+        // keeps matching the heading text colour.
+        filter: none !important;
+    }
+
+    .heading-anchor:hover .heading-anchor-icon,
+    .heading-anchor:focus .heading-anchor-icon {
+        opacity: 1;
+    }
+}
+
 kbd {
     display: inline-block;
     padding: 3px 5px;
