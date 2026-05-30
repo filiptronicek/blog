@@ -47,6 +47,14 @@ p code {
     }
 }
 
+// When the reader asks for more contrast, underline links in the article body
+// so they stand out beyond colour alone. Heading permalinks stay plain.
+@media (prefers-contrast: more) {
+    .article a:not(.heading-anchor) {
+        text-decoration: underline;
+    }
+}
+
 kbd {
     display: inline-block;
     padding: 3px 5px;
