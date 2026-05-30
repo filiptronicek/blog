@@ -55,6 +55,15 @@ p code {
     }
 }
 
+// Separate consecutive footnote references with a comma (e.g. "5,6") so they
+// read as distinct notes rather than a single number. The markup stays clean
+// ([^5][^6]); the comma is inserted automatically between adjacent markers.
+.article sup[id^="fnref"] + sup[id^="fnref"]::before {
+    content: ",";
+    vertical-align: baseline;
+    font-size: initial;
+}
+
 kbd {
     display: inline-block;
     padding: 3px 5px;
