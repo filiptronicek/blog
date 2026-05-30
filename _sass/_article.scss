@@ -64,6 +64,78 @@ p code {
     font-size: initial;
 }
 
+// Wikipedia-style hover/focus preview for footnotes. The preview markup is
+// injected at build time (see _plugins/footnote_previews.rb) and positioned
+// purely in CSS via anchor positioning. Previews are hidden by default (here
+// and via an inline <style> in the <head> to avoid a flash before this
+// stylesheet loads); browsers without anchor positioning keep them hidden and
+// the reference works as a normal jump link.
+.article .footnote-preview {
+    display: none;
+}
+
+@supports (anchor-name: --x) and (position-area: top) {
+    .article sup[id^="fnref"] {
+        // Establish a containing block so position-try/anchor resolve cleanly.
+        position: relative;
+    }
+
+    .article .footnote-preview {
+        display: block;
+        position: fixed;
+        // position-anchor is set per-reference inline by the build plugin.
+        position-area: top;
+        position-try-fallbacks: flip-block;
+        // Centre over the reference and let the box grow to its content width
+        // rather than being clamped to the (narrow) reference's inline size.
+        justify-self: anchor-center;
+        margin: 0.35rem 0;
+
+        z-index: 50;
+        width: max-content;
+        max-width: min(28rem, calc(100vw - 1rem));
+        padding: 0.6rem 0.8rem;
+        font-size: 0.875rem;
+        line-height: 1.45;
+        text-align: left;
+        color: light-dark(#24292e, #e4e4e4);
+        background: light-dark(#ffffff, #2f363d);
+        border: 1px solid light-dark(#d0d7de, #444c56);
+        border-radius: 6px;
+        box-shadow: 0 6px 24px
+            light-dark(rgba(27, 31, 36, 0.2), rgba(0, 0, 0, 0.5));
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(2px);
+        transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
+            visibility 0s linear 0.2s;
+        pointer-events: none;
+
+        p {
+            margin: 0;
+        }
+
+        p + p {
+            margin-top: 0.5rem;
+        }
+    }
+
+    // Reveal on hover or keyboard focus of the reference, and keep it open
+    // while the pointer is over the preview itself.
+    .article sup[id^="fnref"]:hover .footnote-preview,
+    .article sup[id^="fnref"]:focus-within .footnote-preview,
+    .article .footnote-preview:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+        // Cancel the hide-delay when showing.
+        transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
+            visibility 0s;
+    }
+}
+
 kbd {
     display: inline-block;
     padding: 3px 5px;

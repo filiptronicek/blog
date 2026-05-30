@@ -32,6 +32,10 @@
     {% if meta_image %}<meta property="og:image" content="{{ meta_image }}" />{% endif %}
     <meta property="og:description" content="{{ meta_description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Hide footnote previews during parse, before the stylesheet loads, to
+         avoid a flash of inline footnote text. The main stylesheet's
+         higher-specificity @supports rule re-shows them where positionable. -->
+    <style>.footnote-preview{display:none}</style>
     <link href="{{ "/assets/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
   </head>
   <body class="bg-white min-height-full" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
